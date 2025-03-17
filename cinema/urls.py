@@ -22,6 +22,7 @@ from django.conf.urls.static import static
 
 api_urlpatterns = [
     path('movies/', include('apps.movies.urls')),
+    path('reviews/', include('apps.reviews.urls')),
 ]
 
 
