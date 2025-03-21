@@ -1,5 +1,6 @@
 from rest_framework.viewsets import GenericViewSet
 from rest_framework import mixins
+from rest_framework.permissions import IsAdminUser, AllowAny
 
 # Create your views here.
 
@@ -14,3 +15,4 @@ class MovieAPI(GenericViewSet,
                mixins.DestroyModelMixin):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializers
+    

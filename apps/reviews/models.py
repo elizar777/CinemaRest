@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.conf import settings
 from apps.movies.models import Movie
 from django.contrib.auth.models import User
 # Create your models here.
@@ -11,7 +11,7 @@ class Review(models.Model):
         related_name='reviews')
     
     user = models.ForeignKey(
-        User,
+        settings.AUTH_USER_MODEL, 
         on_delete=models.CASCADE
     )
     text = models.TextField(
