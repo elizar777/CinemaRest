@@ -58,7 +58,7 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    # 'PAGE_SIZE': 2
+    'PAGE_SIZE': 4
 }
 
 
@@ -98,10 +98,15 @@ WSGI_APPLICATION = 'cinema.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'cinemapro',  # Имя базы
+        'USER': 'elizar',      # Имя пользователя
+        'PASSWORD': '1234',  # Пароль
+        'HOST': 'localhost',   # Сервер (если локально)
+        'PORT': '5432',        # Порт PostgreSQL
     }
 }
+
 
 
 # Password validation

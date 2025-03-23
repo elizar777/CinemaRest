@@ -21,14 +21,10 @@ class ReviewAPI(GenericViewSet,
     serializer_class = ReviewSerializer
     
     def get_permissions(self):
-        if self.action == 'retrieve':
+        if self.action in ('retrieve','create'):
             return (IsAuthenticated(), )
         if self.action in ('update', 'partial_update', 'destroy'):
             return (ProductPermission(), )
-        if self.action == 'create':
-            return (IsAuthenticated(), )  
-        if self.action == 'list':  
-            return (AllowAny(), )
         return (AllowAny(), )
     
     def perform_create(self, serializer):
